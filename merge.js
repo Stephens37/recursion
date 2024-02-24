@@ -32,7 +32,7 @@ mergeSort(newArray = array.length / 2)
 *how do I add each new split array to a new variable
 */
 
-function mergeSort (a) {
+/* function mergeSort (a) {
   if (a[n] < a[n + 1]) {
     return a
   }
@@ -44,9 +44,6 @@ function mergeSort (a) {
   let c = 0
   let d = 0
   let e = 0
-  if(arrayZero === arrayZero[b][d === 0] && arrayOne === arrayOne[c][e === 0]) {
-    slicedArrays.append([])
-  }
   let arrayZero = slicedArrays[b][d]
   let arrayOne = slicedArrays[c][e]
   if (arrayZero < arrayOne) {
@@ -68,4 +65,47 @@ function mergeSort (a) {
   mergeSort(slicedArrays[slicedArrays.length].append(indexOne))
   b = b + 1
   c = c + 1
+} */
+
+/* the merge sort function's intention is 
+to breakdown a big unsorted array's contents into smaller arrays
+then slowly begin to rebuild that array
+by comparing each of the smaller pieces
+to see which is bigger
+the large array is rebuilt in this exact same method of comparison */
+
+/* mergeSort()
+turn [5, 2, 1, 7, 4] into [5,2], [1], [7, 4]
+5 > 2, [2, 5], [1], 7 > 4, [4, 7]
+2 > 1, [1, 2, 5]
+1 < 4, [1], 2 < 4, [1, 2], 5 > 4, [1, 2, 4], 5 < 7, [1, 2, 4, 5], [1, 2, 4, 5, 7]
+*/
+
+/* mergeSort(a) {
+  if(a.length === 0) {
+    return
+  }
+  /*breakdown of arrays
+  if(a.length % 2 === 0) {
+    mergeSort(a = a.slice([a.length / 2])
+  }
+  if(a.length % 2 === 1) {
+    mergeSort(a = a.slice([a.length + 1 / 2]))
+  }
+  /*rebuilding
+  let b = a[x][y]
+  let c = a[x][z]
+  let x = 0
+  let y = 0
+  if(b.value < c.value) {
+    mergeSort(a[x + 1])
+  }
+  if(c.value < b.value) {
+    mergeSort(a.splice(x, 2, y, z))
+    x + 1
+  }
+  if(c.value === null) {
+    mergeSort()
+  }
 }
+*/
