@@ -80,32 +80,44 @@ turn [5, 2, 1, 7, 4] into [5,2], [1], [7, 4]
 2 > 1, [1, 2, 5]
 1 < 4, [1], 2 < 4, [1, 2], 5 > 4, [1, 2, 4], 5 < 7, [1, 2, 4, 5], [1, 2, 4, 5, 7]
 */
+/* base case */
 
-/* mergeSort(a) {
-  if(a.length === 0) {
+function mergeSort(a) {
+  if (a.length === 1) {
     return
   }
-  /*breakdown of arrays
-  if(a.length % 2 === 0) {
-    mergeSort(a = a.slice([a.length / 2])
-  }
-  if(a.length % 2 === 1) {
-    mergeSort(a = a.slice([a.length + 1 / 2]))
-  }
-  /*rebuilding
-  let b = a[x][y]
-  let c = a[x][z]
+
+/* breakdown of arrays */
+  let d = 0
+  let f = []
+
   let x = 0
   let y = 0
-  if(b.value < c.value) {
-    mergeSort(a[x + 1])
+  let z = 1
+  let b = d[x][y]
+  let c = d[x][z]
+
+  if (a.length !== 0) {
+    f.push(mergeSort(a.slice(d, a[(a.length / 2) - 1])))
+    f.push(mergeSort(a.slice(d, a[a.length - 1])))
   }
-  if(c.value < b.value) {
-    mergeSort(a.splice(x, 2, y, z))
-    x + 1
-  }
-  if(c.value === null) {
-    mergeSort()
+
+/* rebuilding */
+
+  if (b.value < c.value) {
+    mergeSort(a.append(b.value))
+  } else if (c.value < b.value) {
+    mergeSort(a.append(c.value))
   }
 }
+mergeSort([5, 2, 7, 4])
+
+/*
+to rebuild an array all you have to do is concatenate the two arrays
+to compare array elements all you have to do is use a comparison operator
+
+how do i compare multiple array indexes without there being a defined amount?
+
+if one index is greater than the other
+sort the smallest one first
 */
